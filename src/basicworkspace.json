@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Please enter title"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Please enter description"
+    },
+    "lineOfBusiness": {
+      "type": "string",
+      "enum": [
+        "Tax",
+        "IT",
+        "Entertainment",
+        "Military",
+        "Other"
+      ]
+    },
+    "workspaceMembers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "name"
+          },
+          "email": {
+            "type": "string",
+            "description": "email"
+          }
+        }
+      }
+    },
+    "appsAndServices": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Google Data Flow",
+          "Snowflake",
+          "Databricks"
+        ]
+      }
+    }
+  },
+  "required": [
+    "title",
+    "description"
+  ]
+}
